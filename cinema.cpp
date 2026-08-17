@@ -1,22 +1,25 @@
-
 #include <iostream>
 #include <stdlib.h>
 #include <cstdlib>
 #include <ctime>
+#include <string.h>
+
 
 using namespace std;
 
 
-
+int slot = 0 ;
+string watch[100];
 int menu();
 int nowplaying();
 int buyticket();
 int comingsoon();
+int watchlist();
 
 int main(){
-
-	menu();
+	string watch[100];
 	
+	menu();
 	system("pause");
 	return 0;
 }
@@ -28,15 +31,18 @@ int menu(){
 		cout<<"\nATRACADORE CINEMA"<<endl;
 		cout<<"     MENU"<<endl;
 		cout<<"\n1.Now playing\n";
-		cout<<"2.coming soon\n";
-		cout<<"3.exit\n";cin>>menu;
+		cout<<"2.Coming soon\n";
+		cout<<"3.Watchlist\n";
+		cout<<"4.exit\n";cin>>menu;
 		
 		switch(menu){
 			case 1: nowplaying();
 			break;
 			case 2:comingsoon();
 			break;
-			case 3:return 0;
+			case 3:watchlist();
+			break;
+			case 4:return 0;
 		}
 	}
 	
@@ -109,6 +115,8 @@ int buyticket(){
 	int buy=0;
 	int ticket;
 	int random = 0;
+	string seat;
+	
 	
 srand(time(NULL));
 	
@@ -123,30 +131,61 @@ srand(time(NULL));
 			
 			random = rand() %100;
 			
+			
+			cout << "\n";
+cout << "                                  SCREEN \n";
+cout << "\n";
+cout << "        [A13] [A12] [A11] [A10] [A9] [A8] [A7] [A6] [A5] [A4] [A3] [A2] [A1]\n";
+cout << "        [B13] [B12] [B11] [B10] [B9] [B8] [B7] [B6] [B5] [B4] [B3] [B2] [B1]\n";
+cout << "\n";
+cout << "                     [C8] [C7] [C6] [C5] [C4] [C3] [C2]\n";
+cout << "\n";
+cout << "        [D13] [D12] [D11] [D10] [D9] [D8] [D7] [D6] [D5] [D4] [D3] [D2] [D1]\n";
+cout << "        [E13] [E12] [E11] [E10] [E9] [E8] [E7] [E6] [E5] [E4] [E3] [E2] [E1]\n";
+cout << "        [F13] [F12] [F11] [F10] [F9] [F8] [F7] [F6] [F5] [F4] [F3] [F2] [F1]\n";
+cout << "        [G13] [G12] [G11] [G10] [G9] [G8] [G7] [G6] [G5] [G4] [G3] [G2] [G1]\n";
+cout << "        [H13] [H12] [H11] [H10] [H9] [H8] [H7] [H6] [H5] [H4] [H3] [H2] [H1]\n";
+cout << "        [I13] [I12] [I11] [I10] [I9] [I8] [I7] [I6] [I5] [I4] [I3] [I2] [I1]\n";
+cout << "        [J13] [J12] [J11] [J10] [J9] [J8] [J7] [J6] [J5] [J4] [J3] [J2] [J1]\n";
+cout << "        [K13] [K12] [K11] [K10] [K9] [K8] [K7] [K6] [K5] [K4] [K3] [K2] [K1]\n";
+cout << "\n"<<"\nSelect a seat: \n";cin>>seat;
+			
 			switch(ticket){
 			
 			case 1:
+			cout<<"\n            INVOICE\n";
 			cout<<"\nThe ticket was succesfuly bought\n";
 			cout<<"\nYour showtime is: 3 pm to 5 pm\n";
-			cout<<"\nYour number of ticket is: "<<random<<endl;
+			cout<<"\nYour seat is: "<<seat<<"\n";
+			cout<<"\nYour number of ticket is: "<<random<<endl<<endl;
+			system("pause");
 			break;
 			
 			case 2:
+				cout<<"\n            INVOICE\n";
 			cout<<"\nThe ticket was succesfuly bought\n";
 			cout<<"\nYour showtime is: 6 pm to  8 pm\n";
-			cout<<"\nYour number of ticket is: "<<random<<endl;
+			cout<<"\nYour seat is: "<<seat<<"\n";
+			cout<<"\nYour number of ticket is: "<<random<<endl<<endl;
+			system("pause");
 			break;
 			
 			case 3:
+				cout<<"\n            INVOICE\n";
 				cout<<"\nThe ticket was succesfuly bought\n";
 			cout<<"\nYour showtime is: 8 pm to 10 pm\n";
-			cout<<"\nYour number of ticket is: "<<random<<endl;
+			cout<<"\nYour seat is: "<<seat<<"\n";
+			cout<<"\nYour number of ticket is: "<<random<<endl<<endl;
+			system("pause");
 			break;
 			
 			case 4:
+				cout<<"\n            INVOICE\n";
 				cout<<"\nThe ticket was succesfuly bought\n";
 			cout<<"\nYour showtime is: 10 pm to 12 am\n";
-			cout<<"\nYour number of ticket is: "<<random<<endl;
+			cout<<"\nYour seat is: "<<seat<<"\n";
+			cout<<"\nYour number of ticket is: "<<random<<endl<<endl;
+			system("pause");
 			break;
 			}
 			
@@ -178,4 +217,77 @@ int comingsoon(){
 	}
 	
 return 0;
+}
+
+int watchlist(){
+ int desicion;
+ int desicion2;
+
+ for(;;){
+ 
+ cout<<"\n     WATCHLIST\n";
+ cout<<"\n1.Add";
+ cout<<"\n2.See your list";
+ cout<<"\n3.Exit\n";cin>>desicion;
+ 
+ switch(desicion){
+ 	
+ 	case 1:
+ 		cout<<"\nWhat movie do you want to add? \n";
+ 		cout<<"\n1.Spider-Man:Brand New Day \n2.The Odyssey \n3.Moana \n4.El rompe creta \n5.Toy Story 5 \n6.exit \n \n";cin>>desicion2;
+ 		switch(desicion2){
+ 			case 1:
+ 				cout<<"\nYour movie was succesfully add\n";
+			 watch[slot] = "Spider-Man: Brand New Day";
+ 			slot++;
+ 			break;
+ 			
+ 	       case 2:
+ 	       	cout<<"\nYour movie was succesfully add\n";
+ 	       	watch[slot] = "The Odyssey";
+ 	       	slot++;
+ 	       	break;
+ 	       	
+ 	      case 3:
+ 	      	cout<<"\nYour movie was succesfully add\n";
+ 	      	watch[slot] = "Moana";
+ 	      	slot++;
+ 	      	break;
+ 	      	
+ 	      	case 4: 
+			   cout<<"\nYour movie was succesfully add\n";
+			   watch[slot] = "El rompe creta";
+ 	      	slot++;
+ 	      	break;
+ 	      	
+ 	      	case 5: 
+ 	      	cout<<"\nYour movie was succesfully add\n";
+			watch[slot] = "Toy Story 5";
+ 	      	slot++;
+ 	      	break;
+ 	      	
+ 	      	case 6:
+ 	      		return 0;
+ 			
+ 		}
+ 		break;
+ 		case 2:
+ 			if(slot == 0){
+ 				cout<<"\n  WATCHLIST\n";
+ 				cout<<"\nYour list is empty\n\n";
+ 				system("pause");
+ 			}else{
+ 			
+ 			cout<<"\n  WATCHLIST\n\n";
+ 			for(int i=0;i<slot;i++){
+ 				cout<< i + 1 <<"."<<watch[i]<<endl;
+ 				
+ 			}cout<<endl;
+			 system("pause");
+ 		}
+ 		break;
+ 		
+ 		case 3: return 0;
+ }
+}
 }
