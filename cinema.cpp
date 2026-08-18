@@ -3,11 +3,12 @@
 #include <cstdlib>
 #include <ctime>
 #include <string.h>
+#include <fstream>
 
 
 using namespace std;
 
-
+string idk;
 int slot = 0 ;
 string watch[100];
 int menu();
@@ -17,17 +18,19 @@ int comingsoon();
 int watchlist();
 
 int main(){
-	string watch[100];
+	
 	
 	menu();
-	system("pause");
+	cout<<"\nSee you soon";
+	system("pause > nul");
 	return 0;
 }
 
 int menu(){
 	int menu;
-		
+	
 	for(;;){
+		system("cls");
 		cout<<"\nATRACADORE CINEMA"<<endl;
 		cout<<"     MENU"<<endl;
 		cout<<"\n1.Now playing\n";
@@ -54,8 +57,9 @@ int menu(){
 int nowplaying(){
 int movies;
 int ask;
+
 	for(;movies != 6;){
-	
+	system("cls");
 	
 	cout<<"\nATRACADORE CINEMA"<<endl;
 	cout<<"   CATALOG \n \n";
@@ -65,39 +69,69 @@ int ask;
 	
 		switch(movies){
 		
-	case 1:cout<<"\nOVERVIEW\nFour years have passed since the events of No Way Home, and Peter is now an adult living entirely alone, having voluntarily erased himself from the lives and memories of those he loves. Crime-fighting in a New York that no longer knows his name, he’s devoted himself entirely to protecting his city — a full-time Spider-Man — but as the demands on him intensify, the pressure sparks a surprising physical evolution that threatens his existence, even as a strange new pattern of crimes gives rise to one of the most powerful threats he has ever faced. \n \n";
+	case 1:
+	system("cls");
+	cout<<"\nSpider-Man: Brand New Day \n";
+	cout<<"\nOVERVIEW\nFour years have passed since the events of No Way Home, and Peter is now an adult living entirely alone, having voluntarily erased himself from the lives and memories of those he loves. Crime-fighting in a New York that no longer knows his name, he’s devoted himself entirely to protecting his city — a full-time Spider-Man — but as the demands on him intensify, the pressure sparks a surprising physical evolution that threatens his existence, even as a strange new pattern of crimes gives rise to one of the most powerful threats he has ever faced. \n \n";
 	  	cout<<"DIRECTOR:\nDestin Daniel Cretton\n\n";
 	  	cout<<"\nPRODUCER:\nKevin Feige, Amy Pascal, Rachel O'Connor, Avi Arad\n\n";
 	  	cout<<"\nCAST:\nTom Holland, Zendaya, Sadie Sink, Jacob Batalon, Jon Bernthal, Tramell Tillman, Michael Mando, Mark Ruffalo, Liza Colón-Zayas, Marvin Jones III, Eman Esfandi, Keith David, Zabryna Guevara, Rosario Dawson\n\n";
+	  	cout<<"\nPress enter to see the price\n";
+		system("pause > nul");
+		idk = "Spider-Man: Brand New Day";
 		buyticket();
 		break;
 		
 		
-	case 2:cout<<"\nOVERVIER\nOdysseus, the legendary Greek king of Ithaca, embarks on a long and perilous journey home following the Trojan War, chronicling his encounters with mythical beings such as the Cyclops Polyphemus, the Sirens, and the witch-goddess Circe, while attempting to reunite with his wife, Penelope.\n \n";
+	case 2:
+	system("cls");
+	cout<<"\nThe Odyssey\n";
+	cout<<"\nOVERVIER\nOdysseus, the legendary Greek king of Ithaca, embarks on a long and perilous journey home following the Trojan War, chronicling his encounters with mythical beings such as the Cyclops Polyphemus, the Sirens, and the witch-goddess Circe, while attempting to reunite with his wife, Penelope.\n \n";
 		cout<<"\nDIRECTOR:\nChristopher Nolan\n\n";
 		cout<<"\nPRODUCER:\nChristopher Nolan, Emma Thomas\n\n";
 		cout<<"\nCAST:\nMatt Damon, Tom Holland, Zendaya, Anne Hathaway\n\n";
+		cout<<"\nPress enter to see the price\n";
+		system("pause > nul");
+		idk = "The Odyssey";
 	buyticket();
 		break;
 		
-	case 3:cout<<"\nOVERVIEW\nPrompted by a summons from the ocean, Moana departs her home island of Motunui for the first time and travels past its barrier reef. Accompanied by the demigod Maui, she undertakes a voyage aimed at recovering the well-being of her community.\n \n ";
+	case 3:
+	system("cls");
+	cout<<"\nMoana\n";
+	cout<<"\nOVERVIEW\nPrompted by a summons from the ocean, Moana departs her home island of Motunui for the first time and travels past its barrier reef. Accompanied by the demigod Maui, she undertakes a voyage aimed at recovering the well-being of her community.\n \n ";
 		cout<<"\nDIRECTOR:\nThomas Kail\n\n";
 		cout<<"\nPRODUCER:\nDwayne Johnson, Lin-Manuel Miranda, Dany Garcia, Hiram Garcia, Beau Flynn\n\n";
 		cout<<"\nCAST:\nCatherine Laga‘aia, Dwayne Johnson, Rena Owen\n\n";
+		cout<<"\nPress enter to see the price\n";
+		system("pause > nul");
+		idk = "Moana";
 	buyticket();
 		break;
 		
-	case 4:cout<<"\nOVERVIEW\nwhy do you want to se that?????????? \n \n";
+	case 4:
+	system("cls");
+	cout<<"\nEl rompe creta\n";
+	cout<<"\nOVERVIEW\nwhy do you want to se that?????????? \n \n";
 	cout<<"\nDIRECTOR:\nQuerry Piote\n\n";
 		cout<<"\nPRODUCER:\nElma mag uebaso\n\n";
 		cout<<"\nCAST:\nYour mother\n\n";
+		cout<<"\nPress enter to see the price\n";
+		system("pause > nul");
+		idk = "El rompe creta";
 	buyticket();
 		break;
 		
-	case 5:cout<<"\nOVERVIEW\nWhen Bonnie receives a Lilypad tablet as a gift and becomes obsessed, Buzz, Woody, Jessie and the rest of the gang's jobs become exponentially harder when they have to go head to head with the all-new threat to playtime. \n \n";
+	case 5:
+	system("cls");
+	cout<<"\nToy Story 5\n";
+	cout<<"\nOVERVIEW\nWhen Bonnie receives a Lilypad tablet as a gift and becomes obsessed, Buzz, Woody, Jessie and the rest of the gang's jobs become exponentially harder when they have to go head to head with the all-new threat to playtime. \n \n";
 	   	cout<<"\nDIRECTOR:\nAndrew Stanton\n\n";
 		cout<<"\nPRODUCER:\nLindsey Collins\n\n";
 		cout<<"\nCAST:\nTom Hanks, Tim Allen, Joan Cusack\n\n";  
+		cout<<"\nPress enter to see the price\n";
+		system("pause > nul");
+		idk = "Toy Story 5";
 		 buyticket();
 		break;
 		
@@ -115,6 +149,7 @@ int buyticket(){
 	int buy=0;
 	int ticket;
 	int random = 0;
+	int print =0;
 	string seat;
 	
 	
@@ -122,6 +157,7 @@ srand(time(NULL));
 	
 		cout<<"\nMovie price: 450 DOP ";
 		cout<<"Do you want to buy a ticket?\n1.Yes\n2.No \n";cin>>buy;
+		system("cls");
 		if(buy == 1){
 			cout<<"\nShowtimes available:\n";
 			cout<<"1. 3 pm to 5 pm\n";
@@ -131,7 +167,7 @@ srand(time(NULL));
 			
 			random = rand() %100;
 			
-			
+			system("cls");
 			cout << "\n";
 cout << "                                  SCREEN \n";
 cout << "\n";
@@ -149,43 +185,118 @@ cout << "        [I13] [I12] [I11] [I10] [I9] [I8] [I7] [I6] [I5] [I4] [I3] [I2]
 cout << "        [J13] [J12] [J11] [J10] [J9] [J8] [J7] [J6] [J5] [J4] [J3] [J2] [J1]\n";
 cout << "        [K13] [K12] [K11] [K10] [K9] [K8] [K7] [K6] [K5] [K4] [K3] [K2] [K1]\n";
 cout << "\n"<<"\nSelect a seat: \n";cin>>seat;
+system("cls");
+
+            string print;
+			int save;
 			
 			switch(ticket){
 			
-			case 1:
+		case 1:
 			cout<<"\n            INVOICE\n";
 			cout<<"\nThe ticket was succesfuly bought\n";
+			cout<<"\nMovie: "<<idk<<endl;
 			cout<<"\nYour showtime is: 3 pm to 5 pm\n";
 			cout<<"\nYour seat is: "<<seat<<"\n";
 			cout<<"\nYour number of ticket is: "<<random<<endl<<endl;
-			system("pause");
+			cout<<"\nDo you want to save your invoice?\n1.Yes\n2.No\n";cin>>save;
+			system("cls");
+		
+			if(save == 1){
+					cout<<"Type the name of your invoice(no space admited): ";cin>>print;
+						cout<<"\nYor ticket was save correctly\n\n";
+				ofstream invoice((print +".txt").c_str());
+				
+				invoice<<"\n            INVOICE\n";//save in system
+			invoice<<"\nMovie: "<<idk<<endl;
+			invoice<<"\nYour showtime is: 3 pm to 5 pm\n";
+			invoice<<"\nYour seat is: "<<seat<<"\n";
+			invoice<<"\nYour number of ticket is: "<<random<<endl<<endl;
+			invoice.close();
+			}
+			cout<<"\nPress enter to continue";
+			system("pause > nul");
 			break;
 			
-			case 2:
+	    case 2:
 				cout<<"\n            INVOICE\n";
 			cout<<"\nThe ticket was succesfuly bought\n";
+			cout<<"\nMovie: "<<idk<<endl;
 			cout<<"\nYour showtime is: 6 pm to  8 pm\n";
 			cout<<"\nYour seat is: "<<seat<<"\n";
 			cout<<"\nYour number of ticket is: "<<random<<endl<<endl;
-			system("pause");
+			cout<<"\nDo you want to save your invoice?\n1.Yes\n2.No\n";cin>>save;
+			system("cls");
+		
+			if(save == 1){
+					cout<<"Type the name of your invoice(no space admited): ";cin>>print;
+						cout<<"\nYor ticket was save correctly\n\n";
+				ofstream invoice((print +".txt").c_str());
+				
+				invoice<<"\n            INVOICE\n";//save in system
+			invoice<<"\nMovie: "<<idk<<endl;
+			invoice<<"\nYour showtime is: 6 pm to 8 pm\n";
+			invoice<<"\nYour seat is: "<<seat<<"\n";
+			invoice<<"\nYour number of ticket is: "<<random<<endl<<endl;
+			invoice.close();
+		}
+				cout<<"\nPress enter to continue";
+			system("pause > nul");
 			break;
 			
 			case 3:
 				cout<<"\n            INVOICE\n";
 				cout<<"\nThe ticket was succesfuly bought\n";
+				cout<<"\nMovie: "<<idk<<endl;
 			cout<<"\nYour showtime is: 8 pm to 10 pm\n";
 			cout<<"\nYour seat is: "<<seat<<"\n";
 			cout<<"\nYour number of ticket is: "<<random<<endl<<endl;
-			system("pause");
+			cout<<"\nDo you want to save your invoice?\n1.Yes\n2.No\n";cin>>save;
+			system("cls");
+		
+			if(save == 1){
+					cout<<"Type the name of your invoice(no space admited): ";cin>>print;
+						cout<<"\nYor ticket was save correctly\n\n";
+				ofstream invoice((print +".txt").c_str());
+				
+				invoice<<"\n            INVOICE\n";//save in system
+			invoice<<"\nMovie: "<<idk<<endl;
+			invoice<<"\nYour showtime is: 6 pm to 8 pm\n";
+			invoice<<"\nYour seat is: "<<seat<<"\n";
+			invoice<<"\nYour number of ticket is: "<<random<<endl<<endl;
+			invoice.close();
+		}
+			
+				cout<<"\nPress enter to continue";
+			system("pause > nul");;
 			break;
 			
 			case 4:
 				cout<<"\n            INVOICE\n";
 				cout<<"\nThe ticket was succesfuly bought\n";
+				cout<<"\nMovie: "<<idk<<endl;
 			cout<<"\nYour showtime is: 10 pm to 12 am\n";
 			cout<<"\nYour seat is: "<<seat<<"\n";
 			cout<<"\nYour number of ticket is: "<<random<<endl<<endl;
-			system("pause");
+			cout<<"\nDo you want to save your invoice?\n1.Yes\n2.No\n";cin>>save;
+			system("cls");
+		
+			if(save == 1){
+					cout<<"Type the name of your invoice(no space admited): ";cin>>print;
+					cout<<"\nYor ticket was save correctly\n\n";
+					
+				ofstream invoice((print +".txt").c_str());
+				
+				invoice<<"\n            INVOICE\n";//save in system
+			invoice<<"\nMovie: "<<idk<<endl;
+			invoice<<"\nYour showtime is: 6 pm to 8 pm\n";
+			invoice<<"\nYour seat is: "<<seat<<"\n";
+			invoice<<"\nYour number of ticket is: "<<random<<endl<<endl;
+			invoice.close();
+		}
+			
+				cout<<"\nPress enter to continue";
+			system("pause > nul");
 			break;
 			}
 			
@@ -202,13 +313,31 @@ cout << "\n"<<"\nSelect a seat: \n";cin>>seat;
 int comingsoon(){
 	int goback;
 	int coming;
+	system("cls");
 	cout<<"\nATRACADORE CINEMA"<<endl;
 	cout<<"   COMING SOON \n \n";
 	cout<<"\n1.Math are for crazy people \n2.Dune: Part Three \n3.la avalancha de los chamos 3 \n4.haitians attack again";
 	cout<<"\n \nDo you want to book any coming soon movie? \n1.Yes \n2.No \n";cin>>goback;
 	
 	if(goback == 1){
+		system("cls");
+			cout<<"   COMING SOON \n ";
+		cout<<"\n1.Math are for crazy people \n2.Dune: Part Three \n3.la avalancha de los chamos 3 \n4.haitians attack again\n";
 		cout<<"\nWich one?\n";cin>>coming;
+		switch(coming){
+			case 1:
+				idk = "Math are for crazy people--Coming soon";
+				break;
+			case 2:
+				idk = "Dune: Part Three--Coming soon";
+				break;
+			case 3:
+				idk = "la avalancha de los chamos 3--Coming soon";
+				break;
+			case 4:
+				idk= "Haitians attack again--Coming soon";
+				break;
+		}
 		buyticket();
 	}else{
 		for(;goback != 1;){
@@ -224,7 +353,7 @@ int watchlist(){
  int desicion2;
 
  for(;;){
- 
+ system("cls");
  cout<<"\n     WATCHLIST\n";
  cout<<"\n1.Add";
  cout<<"\n2.See your list";
@@ -233,58 +362,132 @@ int watchlist(){
  switch(desicion){
  	
  	case 1:
+ 		system("cls");
  		cout<<"\nWhat movie do you want to add? \n";
  		cout<<"\n1.Spider-Man:Brand New Day \n2.The Odyssey \n3.Moana \n4.El rompe creta \n5.Toy Story 5 \n6.exit \n \n";cin>>desicion2;
+ 		
  		switch(desicion2){
- 			case 1:
- 				cout<<"\nYour movie was succesfully add\n";
-			 watch[slot] = "Spider-Man: Brand New Day";
- 			slot++;
- 			break;
+ 			case 1:{
  			
- 	       case 2:
+ 			
+ 				system("cls");
+ 				cout<<"\nYour movie was succesfully add\n";
+ 				cout<<"\nPress enter to go back to the menu\n";
+ 				system("pause > nul");
+			 watch[slot] = "Spider-Man: Brand New Day";
+			 
+			 ofstream file("watchlist.txt", ios::app);
+ 	      		file<<watch[slot]<<endl;
+ 	      		file.close();
+			 
+ 			slot++;
+ 			
+ 			break;
+ 		}
+ 			
+ 	       case 2:{
+ 	      
+ 	       
+ 	       	system("cls");
  	       	cout<<"\nYour movie was succesfully add\n";
+ 	       	cout<<"\nPress enter to go back to the menu\n";
+ 				system("pause > nul");
  	       	watch[slot] = "The Odyssey";
+ 	       	
+ 	       	ofstream file("watchlist.txt", ios::app);
+ 	      		file<<watch[slot]<<endl;
+ 	      		file.close();
+ 	       	
  	       	slot++;
  	       	break;
+ 	   }    	
  	       	
- 	      case 3:
+ 	      case 3:{
+ 	      	
+ 	      
+ 	      	system("cls");
  	      	cout<<"\nYour movie was succesfully add\n";
+ 	      	cout<<"\nPress enter to go back to the menu\n";
+ 				system("pause > nul");
  	      	watch[slot] = "Moana";
+ 	      	
+ 	      	ofstream file("watchlist.txt", ios::app);
+ 	      		file<<watch[slot]<<endl;
+ 	      		file.close();
+ 	      	
  	      	slot++;
  	      	break;
+ 	      }
+ 	      	case 4: {
+ 	      		
  	      	
- 	      	case 4: 
+ 	      	system("cls");
 			   cout<<"\nYour movie was succesfully add\n";
+			   cout<<"\nPress enter to go back to the menu\n";
+ 				system("pause > nul");
 			   watch[slot] = "El rompe creta";
+			   
+			   ofstream file("watchlist.txt", ios::app);
+ 	      		file<<watch[slot]<<endl;
+ 	      		file.close();
+			   
  	      	slot++;
  	      	break;
+ 	      }
  	      	
- 	      	case 5: 
+ 	      	case 5: {
+ 	      		
+ 	      	
+ 	      	system("cls");
  	      	cout<<"\nYour movie was succesfully add\n";
+ 	      	cout<<"\nPress enter to go back to the menu\n";
+ 				system("pause > nul");
 			watch[slot] = "Toy Story 5";
+			
+			ofstream file("watchlist.txt", ios::app);
+ 	      		file<<watch[slot]<<endl;
+ 	      		file.close();
+			
  	      	slot++;
  	      	break;
+ 	      }
  	      	
- 	      	case 6:
+ 	      	
+ 	      	case 6:{
+ 	    
+ 	      	
  	      		return 0;
+ 	      	}
+ 	      		
+ 	      		
  			
  		}
  		break;
  		case 2:
- 			if(slot == 0){
+ 			system("cls");
+ 			if(slot == 100){
  				cout<<"\n  WATCHLIST\n";
  				cout<<"\nYour list is empty\n\n";
- 				system("pause");
+ 				cout<<"Press enter to come back to the menu";
+ 				system("pause > nul");
  			}else{
+ 			ifstream show("watchlist.txt");
+ 			string aparece;
+ 			int i =1;
+ 	       cout<<" WATCHLIST\n\n";
+ 			while(getline(show, aparece)){
+        cout<< i<<"."<<aparece << endl;
+        i++;
+    }
  			
- 			cout<<"\n  WATCHLIST\n\n";
- 			for(int i=0;i<slot;i++){
- 				cout<< i + 1 <<"."<<watch[i]<<endl;
- 				
+ 			
+ 			
  			}cout<<endl;
-			 system("pause");
- 		}
+ 			cout<<"Press enter to come back to the menu";
+			 system("pause > nul");
+			 
+			
+ 		
  		break;
  		
  		case 3: return 0;
