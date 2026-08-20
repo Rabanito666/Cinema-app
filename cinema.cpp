@@ -4,10 +4,13 @@
 #include <ctime>
 #include <string.h>
 #include <fstream>
+#include <cstdio>
 
 
 using namespace std;
 
+int borralopa=0;
+int error();
 string idk;
 int slot = 0 ;
 string watch[100];
@@ -16,6 +19,7 @@ int nowplaying();
 int buyticket();
 int comingsoon();
 int watchlist();
+
 
 int main(){
 	
@@ -46,6 +50,11 @@ int menu(){
 			case 3:watchlist();
 			break;
 			case 4:return 0;
+			break;
+			
+		    default:
+				error();
+				break;
 		}
 	}
 	
@@ -58,7 +67,7 @@ int nowplaying(){
 int movies;
 int ask;
 
-	for(;movies != 6;){
+	for(;;){
 	system("cls");
 	
 	cout<<"\nATRACADORE CINEMA"<<endl;
@@ -137,7 +146,8 @@ int ask;
 		
 	case 6:return 0;
 	
-	case 7: default:;
+	default:
+	error();
 	
 	};
 
@@ -158,6 +168,8 @@ srand(time(NULL));
 		cout<<"\nMovie price: 450 DOP ";
 		cout<<"Do you want to buy a ticket?\n1.Yes\n2.No \n";cin>>buy;
 		system("cls");
+		
+		
 		if(buy == 1){
 			cout<<"\nShowtimes available:\n";
 			cout<<"1. 3 pm to 5 pm\n";
@@ -165,6 +177,11 @@ srand(time(NULL));
 			cout<<"3. 8 pm to 10 pm\n";
 			cout<<"4. 10 pm to 12 am\n";cin>>ticket;
 			
+			if(ticket > 4){
+				error();
+				return 0;
+			}
+		 
 			random = rand() %100;
 			
 			system("cls");
@@ -187,7 +204,7 @@ cout << "        [K13] [K12] [K11] [K10] [K9] [K8] [K7] [K6] [K5] [K4] [K3] [K2]
 cout << "\n"<<"\nSelect a seat: \n";cin>>seat;
 system("cls");
 
-            string print;
+            string printar;
 			int save;
 			
 			switch(ticket){
@@ -203,9 +220,11 @@ system("cls");
 			system("cls");
 		
 			if(save == 1){
-					cout<<"Type the name of your invoice(no space admited): ";cin>>print;
-						cout<<"\nYor ticket was save correctly\n\n";
-				ofstream invoice((print +".txt").c_str());
+					cout<<"Type the name of your invoice: ";
+					cin.ignore();
+					getline(cin,printar);
+					cout<<"\nYor ticket was save correctly\n\n";
+				ofstream invoice((printar +".txt").c_str());
 				
 				invoice<<"\n            INVOICE\n";//save in system
 			invoice<<"\nMovie: "<<idk<<endl;
@@ -222,80 +241,83 @@ system("cls");
 				cout<<"\n            INVOICE\n";
 			cout<<"\nThe ticket was succesfuly bought\n";
 			cout<<"\nMovie: "<<idk<<endl;
-			cout<<"\nYour showtime is: 6 pm to  8 pm\n";
+			cout<<"\nYour showtime is: 3 pm to 5 pm\n";
 			cout<<"\nYour seat is: "<<seat<<"\n";
 			cout<<"\nYour number of ticket is: "<<random<<endl<<endl;
 			cout<<"\nDo you want to save your invoice?\n1.Yes\n2.No\n";cin>>save;
 			system("cls");
 		
 			if(save == 1){
-					cout<<"Type the name of your invoice(no space admited): ";cin>>print;
-						cout<<"\nYor ticket was save correctly\n\n";
-				ofstream invoice((print +".txt").c_str());
+					cout<<"Type the name of your invoice: ";
+					cin.ignore();
+					getline(cin,printar);
+					cout<<"\nYor ticket was save correctly\n\n";
+				ofstream invoice((printar +".txt").c_str());
 				
 				invoice<<"\n            INVOICE\n";//save in system
 			invoice<<"\nMovie: "<<idk<<endl;
-			invoice<<"\nYour showtime is: 6 pm to 8 pm\n";
+			invoice<<"\nYour showtime is: 3 pm to 5 pm\n";
 			invoice<<"\nYour seat is: "<<seat<<"\n";
 			invoice<<"\nYour number of ticket is: "<<random<<endl<<endl;
 			invoice.close();
-		}
-				cout<<"\nPress enter to continue";
+			}
+			cout<<"\nPress enter to continue";
 			system("pause > nul");
 			break;
 			
 			case 3:
 				cout<<"\n            INVOICE\n";
-				cout<<"\nThe ticket was succesfuly bought\n";
-				cout<<"\nMovie: "<<idk<<endl;
-			cout<<"\nYour showtime is: 8 pm to 10 pm\n";
+			cout<<"\nThe ticket was succesfuly bought\n";
+			cout<<"\nMovie: "<<idk<<endl;
+			cout<<"\nYour showtime is: 3 pm to 5 pm\n";
 			cout<<"\nYour seat is: "<<seat<<"\n";
 			cout<<"\nYour number of ticket is: "<<random<<endl<<endl;
 			cout<<"\nDo you want to save your invoice?\n1.Yes\n2.No\n";cin>>save;
 			system("cls");
 		
 			if(save == 1){
-					cout<<"Type the name of your invoice(no space admited): ";cin>>print;
-						cout<<"\nYor ticket was save correctly\n\n";
-				ofstream invoice((print +".txt").c_str());
+					cout<<"Type the name of your invoice: ";
+					cin.ignore();
+					getline(cin,printar);
+					cout<<"\nYor ticket was save correctly\n\n";
+				ofstream invoice((printar +".txt").c_str());
 				
 				invoice<<"\n            INVOICE\n";//save in system
 			invoice<<"\nMovie: "<<idk<<endl;
-			invoice<<"\nYour showtime is: 6 pm to 8 pm\n";
+			invoice<<"\nYour showtime is: 3 pm to 5 pm\n";
 			invoice<<"\nYour seat is: "<<seat<<"\n";
 			invoice<<"\nYour number of ticket is: "<<random<<endl<<endl;
 			invoice.close();
-		}
-			
-				cout<<"\nPress enter to continue";
-			system("pause > nul");;
+			}
+			cout<<"\nPress enter to continue";
+			system("pause > nul");
 			break;
 			
 			case 4:
-				cout<<"\n            INVOICE\n";
-				cout<<"\nThe ticket was succesfuly bought\n";
-				cout<<"\nMovie: "<<idk<<endl;
-			cout<<"\nYour showtime is: 10 pm to 12 am\n";
+			cout<<"\n            INVOICE\n";
+			cout<<"\nThe ticket was succesfuly bought\n";
+			cout<<"\nMovie: "<<idk<<endl;
+			cout<<"\nYour showtime is: 3 pm to 5 pm\n";
 			cout<<"\nYour seat is: "<<seat<<"\n";
 			cout<<"\nYour number of ticket is: "<<random<<endl<<endl;
 			cout<<"\nDo you want to save your invoice?\n1.Yes\n2.No\n";cin>>save;
 			system("cls");
 		
 			if(save == 1){
-					cout<<"Type the name of your invoice(no space admited): ";cin>>print;
+					cout<<"Type the name of your invoice: ";
+					cin.ignore();
+					getline(cin,printar);
 					cout<<"\nYor ticket was save correctly\n\n";
-					
-				ofstream invoice((print +".txt").c_str());
+				ofstream invoice((printar +".txt").c_str());
 				
 				invoice<<"\n            INVOICE\n";//save in system
 			invoice<<"\nMovie: "<<idk<<endl;
-			invoice<<"\nYour showtime is: 6 pm to 8 pm\n";
+			invoice<<"\nYour showtime is: 3 pm to 5 pm\n";
 			invoice<<"\nYour seat is: "<<seat<<"\n";
 			invoice<<"\nYour number of ticket is: "<<random<<endl<<endl;
 			invoice.close();
-		}
-			
-				cout<<"\nPress enter to continue";
+			}
+			cout<<"\nPress enter to continue";
 			system("pause > nul");
 			break;
 			}
@@ -337,6 +359,9 @@ int comingsoon(){
 			case 4:
 				idk= "Haitians attack again--Coming soon";
 				break;
+				default:
+					error();
+					return 0;
 		}
 		buyticket();
 	}else{
@@ -357,11 +382,14 @@ int watchlist(){
  cout<<"\n     WATCHLIST\n";
  cout<<"\n1.Add";
  cout<<"\n2.See your list";
- cout<<"\n3.Exit\n";cin>>desicion;
+ cout<<"\n3.Delete from your list";
+ cout<<"\n4.Exit\n";
+ cin>>desicion;
  
  switch(desicion){
  	
- 	case 1:
+ 	case 1:{
+ 	
  		system("cls");
  		cout<<"\nWhat movie do you want to add? \n";
  		cout<<"\n1.Spider-Man:Brand New Day \n2.The Odyssey \n3.Moana \n4.El rompe creta \n5.Toy Story 5 \n6.exit \n \n";cin>>desicion2;
@@ -458,39 +486,105 @@ int watchlist(){
  	      	
  	      		return 0;
  	      	}
+ 	      	
+ 	      	default : {
+ 	      		error();
+ 	      	}
  	      		
  	      		
  			
  		}
  		break;
- 		case 2:
+ 	}
+ 		case 2:{
+ 			
+ 		int apoyo =0;
  			system("cls");
- 			if(slot == 100){
- 				cout<<"\n  WATCHLIST\n";
- 				cout<<"\nYour list is empty\n\n";
- 				cout<<"Press enter to come back to the menu";
- 				system("pause > nul");
- 			}else{
+ 		
+ 				
+ 			
  			ifstream show("watchlist.txt");
  			string aparece;
  			int i =1;
+ 			
  	       cout<<" WATCHLIST\n\n";
  			while(getline(show, aparece)){
         cout<< i<<"."<<aparece << endl;
         i++;
+        apoyo++;
     }
+    
+	if(apoyo == 0){
+ 				cout<<"\n  WATCHLIST\n";
+ 				cout<<"\nYour list is empty\n\n";
+ 			}
  			
  			
  			
- 			}cout<<endl;
+ 			cout<<endl;
  			cout<<"Press enter to come back to the menu";
 			 system("pause > nul");
 			 
 			
  		
  		break;
+ 	}
+ 		case 3:{
  		
- 		case 3: return 0;
+ 		
+ 		
+ 		
+ 	
+        
+ 		ifstream show ("watchlist.txt");
+ 			string aparece;
+ 			int i =0;
+ 			int guia = 0;
+ 	       cout<<" WATCHLIST\n\n";
+ 			while(getline(show, aparece)){
+ 			watch[i] = aparece;
+        cout<< i+1<<"."<<aparece << endl;
+        i++;
+        guia++;
+    }
+        	if(guia == 0){
+        		system("cls");
+        	cout<<"\nYour list is empty\n";
+        	system("pause > nul");
+        	break;
+        }
+        
+        
+        show.close();
+        
+        cout<<"\nWich one do you want to delete?\n";cin>>borralopa;
+        ofstream kill("diesoon.txt");
+        for(int j =0; j < i;j++){
+        	if(j != borralopa -1){
+        		kill<<watch[j]<<endl;
+        	}
+        }
+    
+       kill.close();
+       
+       remove("watchlist.txt");
+       rename("diesoon.txt","watchlist.txt");
+       
+       system("cls");
+       cout<<"\nThe movie was succefuly eliminate it\n";
+       system("pause> nul");
+ 		break;
+ 	}
+ 		case 4:{
+ 			 return 0;
+ 			 break;
+ 		}
  }
 }
+}
+
+int error(){
+	cout<<"\nthats incorrect my friend,try it again and dont be dumb please\n\n";
+	system("pause > nul");
+	return 0;
 }
